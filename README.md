@@ -8,7 +8,10 @@ expanded with older events as their PGNs are collected.
 
 ZIPs live in year folders. Each ZIP contains one matching PGN, for example:
 
-`2026/bullet-brawl-2026-08-29.zip` → `bullet-brawl-2026-08-29.pgn`
+`2026/cc_bullet-brawl_260829.zip` → `cc_bullet-brawl_260829.pgn`
+
+Filenames follow `cc_bullet-brawl_YYMMDD.(zip|pgn)`. One event per date; no
+suffix is used.
 
 `bb_manifest.json` is the structured source for the future Chess Nerd archive
 page. `bb_links.txt`, `bb_events.txt`, and `bb_game_counts.txt` are generated
@@ -33,7 +36,8 @@ Accepted source filename forms:
 - `Bullet_Brawl_YYYY-MM-DD-HH-MM.pgn`
 - `Bullet-Brawl-Month-DD-YYYY_YYYY-MM-DD-HH-MM.pgn`
 - `YYYY-bullet-brawl-month-DD.pgn`
-- `bullet-brawl-YYYY-MM-DD.pgn`
+- `bullet-brawl-YYYY-MM-DD.pgn` (legacy canonical)
+- `cc_bullet-brawl_YYMMDD.pgn` (current canonical)
 
 Rebuild metadata without adding files with `python archive_metadata.py --write`.
 Run validation tests with `python -m unittest test_archive_metadata`.

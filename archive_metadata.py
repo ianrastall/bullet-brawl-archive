@@ -12,7 +12,8 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-CANONICAL_NAME = re.compile(r'^bullet-brawl-(\d{4}-\d{2}-\d{2})\.(?:pgn|zip)$', re.I)
+CANONICAL_NAME = re.compile(r'^cc_bullet-brawl_(\d{2})(\d{2})(\d{2})\.(?:pgn|zip)$', re.I)
+LEGACY_NAME = re.compile(r'^bullet-brawl-(\d{4}-\d{2}-\d{2})\.(?:pgn|zip)$', re.I)
 TIMED_NAME = re.compile(r'^Bullet_Brawl_(\d{4}-\d{2}-\d{2})-\d{2}-\d{2}\.pgn$', re.I)
 DESCRIPTIVE_NAME = re.compile(
     r'^Bullet-Brawl-([A-Za-z]+)-(\d{2})-(\d{4})_(\d{4}-\d{2}-\d{2})-\d{2}-\d{2}\.pgn$', re.I
@@ -23,6 +24,9 @@ HEADER = re.compile(rb'^\[([A-Za-z0-9_]+) "([^"\r\n]*)"\]\s*$', re.M)
 
 def archive_date(filename: str) -> str:
     match = CANONICAL_NAME.fullmatch(filename)
+    if match:
+        return date(2000 + int(match[1]), int(match[2]), int(match[3])).isoformat()
+    match = LEGACY_NAME.fullmatch(filename)
     if match:
         return date.fromisoformat(match[1]).isoformat()
     match = TIMED_NAME.fullmatch(filename)
@@ -108,7 +112,7 @@ def main() -> None:
     pending = []
     for source in args.import_pgn:
         event_date = archive_date(source.name)
-        filename = f'bullet-brawl-{event_date}.zip'
+        filename = f'cc_bullet-brawl_{event_date[2:4]}{event_date[5:7]}{event_date[8:10]}.zip'
         if filename in known:
             raise ValueError(f'Archive already exists or was selected twice: {filename}')
         content = source.read_bytes()

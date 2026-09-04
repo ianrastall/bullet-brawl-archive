@@ -11,6 +11,8 @@ class MetadataTests(unittest.TestCase):
         )
         self.assertEqual(archive_date('2026-bullet-brawl-august-29.pgn'), '2026-08-29')
         self.assertEqual(archive_date('bullet-brawl-2026-08-29.zip'), '2026-08-29')
+        self.assertEqual(archive_date('cc_bullet-brawl_260829.zip'), '2026-08-29')
+        self.assertEqual(archive_date('cc_bullet-brawl_260829.pgn'), '2026-08-29')
 
     def test_disagreeing_or_invalid_dates_fail(self):
         for filename in (
@@ -34,11 +36,11 @@ class MetadataTests(unittest.TestCase):
         self.assertEqual(pgn_metadata(content), ('Live Chess', 2))
 
     def test_metadata_uses_canonical_names_and_urls(self):
-        entry = entry_metadata('bullet-brawl-2026-08-29.zip',
-                               'bullet-brawl-2026-08-29.pgn', 'Live Chess', 10, 'a' * 64)
+        entry = entry_metadata('cc_bullet-brawl_260829.zip',
+                               'cc_bullet-brawl_260829.pgn', 'Live Chess', 10, 'a' * 64)
         self.assertEqual(entry['event'], 'Bullet Brawl')
         self.assertEqual(entry['sourceEvent'], 'Live Chess')
-        self.assertIn('/2026/bullet-brawl-', render_metadata([entry])['bb_links.txt'])
+        self.assertIn('/2026/cc_bullet-brawl_260829.zip', render_metadata([entry])['bb_links.txt'])
         self.assertNotIn('\\', entry['url'])
 
 
