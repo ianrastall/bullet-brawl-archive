@@ -1,7 +1,7 @@
 # bullet-brawl-archive
 
 Chess.com Bullet Brawl games, renamed and organized for the Chess Nerd archive.
-The collection currently covers August 2025 through August 2026 and can be
+The collection currently covers October 2024 through August 2026 and can be
 expanded with older events as their PGNs are collected.
 
 ## Data and naming
@@ -40,6 +40,6 @@ Run validation tests with `python -m unittest test_archive_metadata`.
 
 ## Current collection
 
-The archive contains 57 Bullet Brawl events from August 2, 2025, through August
-29, 2026: 171,545 games. Community Bullet Brawl is a separate competition and
+The archive contains 99 Bullet Brawl events from October 5, 2024, through August
+29, 2026: 318,952 games. Community Bullet Brawl is a separate competition and
 is not included.
