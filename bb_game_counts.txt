@@ -168,3 +168,4 @@ bullet-brawl_2026-08-29.pgn: 3634
 bullet-brawl_2026-09-05.pgn: 3172
 bullet-brawl_2026-09-12.pgn: 3644
 bullet-brawl_2026-09-19.pgn: 3932
+bullet-brawl_2026-09-26.pgn: 3433
