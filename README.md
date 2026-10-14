@@ -47,8 +47,8 @@ with `python archive_metadata.py --migrate --write`. Run validation tests with
 
 ## Current collection
 
-The archive contains 172 Bullet Brawl events from January 28, 2023, through
-October 3, 2026: 515,996 games. Coverage is complete for 2024-2026 except
+The archive contains 173 Bullet Brawl events from January 28, 2023, through
+October 10, 2026: 519,526 games. Coverage is complete for 2024-2026 except
 January 27 and October 26, 2024, where no source file is currently available;
 2023 is partial (30 events, roughly weekly from July onward with occasional
 earlier dates). Community Bullet Brawl is a separate competition and is not
