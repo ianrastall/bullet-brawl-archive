@@ -173,3 +173,4 @@ bullet-brawl_2026-10-03.pgn: Bullet Brawl
 bullet-brawl_2026-10-10.pgn: Bullet Brawl
 bullet-brawl_2026-10-17.pgn: Bullet Brawl
 bullet-brawl_2026-10-24.pgn: Bullet Brawl
+bullet-brawl_2026-10-31.pgn: Bullet Brawl
