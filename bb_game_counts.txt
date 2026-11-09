@@ -174,3 +174,4 @@ bullet-brawl_2026-10-10.pgn: 3530
 bullet-brawl_2026-10-17.pgn: 3372
 bullet-brawl_2026-10-24.pgn: 4141
 bullet-brawl_2026-10-31.pgn: 4497
+bullet-brawl_2026-11-07.pgn: 4270
